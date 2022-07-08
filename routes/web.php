@@ -13,6 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', function(){
+  return view('anasayfa');
+});
+Route::get ('/kurumsal', function(){
+  return view('kurumsal');
+});
+Route::get ('/referanslar', function(){
+  return view('referanslar');
+});
+Route::get ('/iletisim', function(){
+  return view('iletisim');
 });
