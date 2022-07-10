@@ -13,5 +13,10 @@ use App\Http\Controllers\UsersController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-//RESOURCE Kullanımıı 
-Route::resource('users', UsersController::class);
+
+Route::get ('/', function(){
+  return view('home');
+});
+Route::get ('/about', function(){
+  return view('about');
+});

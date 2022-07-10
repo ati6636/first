@@ -1,1 +1,0 @@
-Burası show sayfası

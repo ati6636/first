@@ -1,1 +1,0 @@
-Burası index sayfası
