@@ -12,17 +12,33 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::redirect('/','anasayfa');
 
-Route::get('/anasayfa', function(){
-  return view('anasayfa');
-});
-Route::get ('/kurumsal', function(){
-  return view('kurumsal');
-});
-Route::get ('/referanslar', function(){
-  return view('referanslar');
-});
-Route::get ('/iletisim', function(){
-  return view('iletisim');
+//REDİRECT(YÖNLENDİRME)
+//Route::redirect('/','anasayfa');
+
+//Route::get('/anasayfa', function(){
+//  return view('anasayfa');
+//});
+//Route::get ('/kurumsal', function(){
+//  return view('kurumsal');
+//});
+//Route::get ('/referanslar', function(){
+//  return view('referanslar');
+//});
+//Route::get ('/iletisim', function(){
+//  return view('iletisim');
+//});
+
+//PREFİX KULLANIMI (GRUPLAMA)
+Route::prefix('sayfalar')->group( function(){
+
+  Route::get ('/kurumsal', function(){
+    return view('kurumsal');
+  });
+  Route::get ('/referanslar', function(){
+    return view('referanslar');
+  });
+  Route::get ('/iletisim', function(){
+    return view('iletisim');
+  });
 });
