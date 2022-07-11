@@ -22,13 +22,31 @@
     </head>
     <body class="antialiased">
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
+
+          <!--if - else ifadesi
           @php
           $sayi=3
           @endphp
           @if ($sayi==1)
-            sayı 1'dir
+            sayı 1'dir <br>
           @else
-            sayı 1 değildir
+            sayı 1 değildir <br><br>
+          @endif -->
+
+
+          <!--for ifadesi
+          @for ($i=0; $i < 2; $i++)
+            geçerli değer {{$i}}<br><br>
+          @endfor -->
+
+          <!--foreach ifadesi-->
+          @php
+            $users=['cem', 'taner','ali']
+          @endphp
+          @if (count($users))
+            @foreach ($users as $user)
+              <li>{{$user}}</li><br>
+            @endforeach
           @endif
         </div>
     </body>
