@@ -15,4 +15,8 @@ class PageController extends Controller
   public function contact(){
     return view('pages.contact.contact');
   }
+  public function students(){
+    $students = ['cem','ali', 'hasan', 'ali', 'veli'];
+    return view('pages.students', compact('students'));
+  }
 }
