@@ -17,6 +17,9 @@ class PageController extends Controller
   }
   public function students(){
     $students = ['cem','ali', 'hasan', 'ali', 'veli'];
-    return view('pages.students', compact('students'));
+    $class=['1a','2a','3a'];
+    //return view('pages.students', compact('students'));
+    //return view('pages.students')->with('students', $students);
+    return view('pages.students', compact('students', 'class'));
   }
 }
