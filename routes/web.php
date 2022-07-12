@@ -14,7 +14,6 @@ use App\Http\Controllers\PageController;
 |
 */
 
-Route::get('home', [PageController::class, 'home']);
-Route::get('about', [PageController::class, 'about']);
-Route::get('contact', [PageController::class, 'contact']);
-Route::get('students', [PageController::class, 'students']);
+Route::get('/', function(){
+  return view('welcome');
+});
