@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\OrdersController;
+use App\Http\Controllers\PagesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,4 +14,4 @@ use App\Http\Controllers\OrdersController;
 |
 */
 
-Route::get ('orders', [OrdersController::class, 'index']);
+Route::get ('/', [PagesController::class, 'home']);
