@@ -13,6 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/insert', function () {
+    DB::insert('insert into posts (title,description,content) values (?,?,?)',['laravel Raw Query',' Laravel Veritabanı','Laravel Veritabanı Dersleri']);
+    return 'veri eklendi';
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
