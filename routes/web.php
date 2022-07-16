@@ -24,6 +24,11 @@ Route::get('/select', function(){
     return $post->title;
   }
 });
+Route::get('/update', function () {
+    $update= DB::update('update posts set title = "yeni başlık", description="laravel veri tabani", content="veri tabani Dersleri" where id=?', [1]);
+    return $update;
+});
+
 
 Auth::routes();
 
