@@ -28,6 +28,10 @@ Route::get('/update', function () {
     $update= DB::update('update posts set title = "yeni başlık", description="laravel veri tabani", content="veri tabani Dersleri" where id=?', [1]);
     return $update;
 });
+Route::get('/delete', function () {
+    $delete= DB::delete('delete from posts where id=?', [1]);
+    return $delete;
+});
 
 
 Auth::routes();
