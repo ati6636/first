@@ -18,6 +18,13 @@ Route::get('/insert', function () {
     return 'veri eklendi';
 });
 
+Route::get('/select', function(){
+  $posts=DB::select('select * from posts where id= ?', [1]);
+  foreach ($posts as $post) {
+    return $post->title;
+  }
+});
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
