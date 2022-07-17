@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PagesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,26 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/insert', function () {
-    DB::insert('insert into posts (title,description,content) values (?,?,?)',['laravel Raw Query',' Laravel Veritabanı','Laravel Veritabanı Dersleri']);
-    return 'veri eklendi';
-});
-
-Route::get('/select', function(){
-  $posts=DB::select('select * from posts where id= ?', [1]);
-  foreach ($posts as $post) {
-    return $post->title;
-  }
-});
-Route::get('/update', function () {
-    $update= DB::update('update posts set title = "yeni başlık", description="laravel veri tabani", content="veri tabani Dersleri" where id=?', [1]);
-    return $update;
-});
-Route::get('/delete', function () {
-    $delete= DB::delete('delete from posts where id=?', [1]);
-    return $delete;
-});
-
+Route::get ('create', [PagesController::class, 'create']);
+Route::get ('createNew', [PagesController::class, 'createNew']);
 
 Auth::routes();
 
