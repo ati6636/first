@@ -25,4 +25,15 @@ class PagesController extends Controller
     ]);
     return 'veri Eklendi';
   }
+  public function read(){
+    $pages=Pages::query()->get();
+    return view('read', compact('pages'));
+  }
+  public function edit($id){
+    $page = Pages::query()->find($id);
+    $title = $page->title;
+    $subtitle = $page->subtitle;
+    $content = $page->content;
+    return view('edit', compact('title', 'subtitle','content'));
+  }
 }
