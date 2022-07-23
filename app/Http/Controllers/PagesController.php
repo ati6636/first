@@ -45,4 +45,10 @@ class PagesController extends Controller
     $page->save();
     return 'veri güncellendi';
   }
+  public function delete($id){
+    $page = Pages::query()->find($id);
+    $page->delete();
+
+    return 'veri silindi';
+  }
 }
