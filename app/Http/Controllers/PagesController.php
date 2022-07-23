@@ -36,4 +36,13 @@ class PagesController extends Controller
     $content = $page->content;
     return view('edit', compact('title', 'subtitle','content'));
   }
+  public function update($id){
+    $page= Pages::query()->find($id);
+    $page->title = 'yeni Başlık';
+    $page->subtitle = 'yeni alt başlık';
+    $page->content = 'yeni içerik';
+
+    $page->save();
+    return 'veri güncellendi';
+  }
 }
